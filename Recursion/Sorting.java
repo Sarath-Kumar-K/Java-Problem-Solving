@@ -3,8 +3,35 @@ import java.util.Arrays;
 public class Sorting {
     public static void main(String[] args) {
         int[] arr = {9,8,7,6,5,4,3,2,1};
-        mergeSortInPlace(arr, 0, arr.length);
+        quickSort(arr, 0, arr.length-1);
         System.out.println(Arrays.toString(arr));
+    }
+    static void quickSort(int[] arr,int low,int high){
+        if(low >= high){
+            return;
+        }
+
+        int start = low;
+        int end = high;
+        int mid = start + (end-start)/2;
+        
+        while(start <= end){
+            while(arr[start] < arr[mid]){
+                start++;
+            }
+            while(arr[end] > arr[mid]){
+                end--;
+            }
+            if(start <= end){
+                int temp = arr[end];
+                arr[end] = arr[start];
+                arr[start] = temp;
+                start++;
+                end--;
+            }
+        }
+        quickSort(arr, low, end);
+        quickSort(arr, start, high);
     }
     static void bubbleSort(int[] arr,int left,int right){
         if(right == 0){

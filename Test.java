@@ -1,8 +1,4 @@
-import java.security.PublicKey;
-import java.time.*;
 import java.util.*;
-import java.util.stream.Collector;
-import java.util.stream.Collectors;
 
 public class Test {
     public static void main(String[] args) {
@@ -76,7 +72,6 @@ public class Test {
     }
 
     public static void palindromes(String str){
-        int len = str.length();
         for(int i=0;i<str.length()-2;i++){
             for(int j=i+2;j<=str.length();j++){
                 if(isPalindrome(str.substring(i, j))){

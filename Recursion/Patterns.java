@@ -3,7 +3,7 @@ import java.util.Arrays;
 public class Patterns {
     public static void main(String[] args) {
         int[] arr = new int[]{9,8,7,6,5};
-        bubbleSort(arr, 0, arr.length-1);
+        // bubbleSort(arr, 0, arr.length-1);
         System.out.println(Arrays.toString(arr));
     }
     static void desc(int rows){
